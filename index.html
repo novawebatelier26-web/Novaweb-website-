@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NovaWeb Atelier26 | Ideas, Websites, Apps</title>
+<meta name="description" content="NovaWeb Atelier26 builds professional websites, online shops and web apps for South African businesses. Starter websites from R2,500. Chat on WhatsApp.">
+<link rel="icon" href="logo.jpg">
+<style>
+:root{--bg:#060914;--bg2:#0b1226;--card:#101a36;--line:#1d2c57;--blue:#2d8cff;--cyan:#36c6ff;--text:#eef3ff;--muted:#9aa9cf}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;line-height:1.6}
+a{color:inherit;text-decoration:none}
+button,input,textarea,select{font-family:inherit}
+.wrap{max-width:1040px;margin:auto;padding:0 18px}
+nav{position:sticky;top:0;z-index:20;background:rgba(6,9,20,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.5px;font-size:15px}
+.brand img{width:34px;height:34px;border-radius:50%}
+.brand span{color:var(--cyan)}
+.links{display:flex;gap:16px;font-size:14px;align-items:center}
+.links a:hover{color:var(--cyan)}
+.pill{background:linear-gradient(135deg,var(--blue),var(--cyan));color:#021027;font-weight:700;padding:9px 16px;border-radius:24px;font-size:14px;border:0;display:inline-block}
+.pill.ghost{background:none;color:var(--text);border:1px solid var(--line)}
+.hide-s{display:none}
+@media(min-width:640px){.hide-s{display:inline}}
+.hero{text-align:center;padding:46px 0 40px;background:radial-gradient(circle at 50% 0%,#12235a 0%,var(--bg) 62%)}
+.hero img{width:190px;height:190px;border-radius:50%;box-shadow:0 0 50px rgba(45,140,255,.45)}
+.hero h1{font-size:31px;line-height:1.18;margin:22px auto 12px;max-width:640px}
+.hero h1 em{font-style:normal;background:linear-gradient(135deg,var(--blue),var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--muted);max-width:560px;margin:0 auto 22px}
+.btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.tag{display:inline-block;font-size:12px;letter-spacing:3px;color:var(--cyan);margin-top:6px}
+section{padding:48px 0}
+h2{font-size:26px;text-align:center;margin-bottom:6px}
+.sub{text-align:center;color:var(--muted);max-width:560px;margin:0 auto 26px}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+.card .ic{font-size:28px;margin-bottom:8px}
+.card h3{font-size:17px;margin-bottom:6px}
+.card p,.card li{font-size:14px;color:var(--muted)}
+.pkg{position:relative;display:flex;flex-direction:column}
+.pkg.best{border-color:var(--cyan);box-shadow:0 0 28px rgba(54,198,255,.18)}
+.ribbon{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--blue),var(--cyan));color:#021027;font-size:11px;font-weight:800;padding:3px 12px;border-radius:12px;letter-spacing:1px;white-space:nowrap}
+.pkg .price{font-size:32px;font-weight:800;margin:6px 0 10px}
+.pkg .price small{font-size:13px;color:var(--muted);font-weight:400}
+.pkg ul{list-style:none;margin-bottom:16px;flex:1}
+.pkg li{padding:5px 0 5px 22px;position:relative}
+.pkg li::before{content:'\2713';position:absolute;left:0;color:var(--cyan);font-weight:800}
+.pkg .pill{text-align:center;width:100%}
+.note{text-align:center;color:var(--muted);font-size:13px;margin-top:16px}
+.work{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.proj{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.prev{position:relative;aspect-ratio:4/3.4;overflow:hidden;background:linear-gradient(135deg,#12235a,#0b1226)}
+.prev .ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:16px;color:var(--muted);font-size:13px}
+.prev iframe{position:absolute;top:0;left:0;width:400px;height:560px;border:0;transform-origin:0 0;pointer-events:none;background:#fff;opacity:0;transition:opacity .4s}
+.prev iframe.on{opacity:1}
+.prev a{position:absolute;inset:0;z-index:2}
+.proj .meta{padding:14px 16px 16px}
+.proj h3{font-size:16px}
+.proj .kind{font-size:12px;color:var(--cyan);letter-spacing:1px;text-transform:uppercase}
+.proj p{font-size:13px;color:var(--muted);margin:4px 0 12px}
+.steps{counter-reset:s;display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.step{counter-increment:s;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 20px 20px 62px;position:relative}
+.step::before{content:counter(s);position:absolute;left:18px;top:18px;width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--cyan));color:#021027;font-weight:800;display:flex;align-items:center;justify-content:center}
+.step h3{font-size:16px}.step p{font-size:13px;color:var(--muted)}
+.contact{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));align-items:start}
+.cbox a.row{display:flex;gap:12px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-bottom:10px}
+.cbox .row b{display:block;font-size:15px}.cbox .row span{font-size:13px;color:var(--muted)}
+.cbox .ic{font-size:22px}
+form{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}
+form input,form textarea,form select{width:100%;padding:12px;border-radius:10px;border:1px solid var(--line);background:#081027;color:var(--text);font-size:15px;margin-bottom:10px}
+form textarea{min-height:90px;resize:vertical}
+form .pill{width:100%;padding:13px;font-size:15px;cursor:pointer}
+footer{border-top:1px solid var(--line);padding:26px 0 90px;text-align:center;color:var(--muted);font-size:13px}
+#fab{position:fixed;right:14px;bottom:16px;z-index:30;display:flex;align-items:center;gap:8px;background:#1faa59;color:#fff;font-weight:700;padding:13px 18px;border-radius:30px;box-shadow:0 6px 20px rgba(0,0,0,.4);font-size:14px}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="logo.jpg" alt="NovaWeb Atelier26 logo"><div>NOVAWEB <span>ATELIER26</span></div></a>
+    <div class="links">
+      <a href="#work">Work</a><a href="#packages">Packages</a><a class="hide-s" href="#process">Process</a>
+      <a class="pill" href="#contact">Get a quote</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <img src="logo.jpg" alt="NovaWeb Atelier26">
+    <div class="tag">IDEAS &bull; WEBSITES &bull; APPS</div>
+    <h1>Professional websites that help your business <em>get more customers</em></h1>
+    <p>We design and build mobile-friendly websites, online shops and web apps for businesses across South Africa. Customers can call, WhatsApp or book you in one tap.</p>
+    <div class="btns">
+      <a class="pill" href="https://wa.me/27834597295?text=Hi%20NovaWeb%20Atelier26%2C%20I%20would%20like%20a%20website%20for%20my%20business." target="_blank" rel="noopener">Chat on WhatsApp</a>
+      <a class="pill ghost" href="#work">See our work</a>
+    </div>
+  </div>
+</header>
+
+<section id="services">
+  <div class="wrap">
+    <h2>What we build</h2>
+    <p class="sub">Everything your business needs to look professional and be found online.</p>
+    <div class="grid">
+      <div class="card"><div class="ic">&#127760;</div><h3>Business websites</h3><p>Restaurants, lodges, guest houses, contractors and more, with your photos, services and location map.</p></div>
+      <div class="card"><div class="ic">&#128717;</div><h3>Online shops</h3><p>Show your products, add a cart and receive orders straight on WhatsApp. No online payment setup needed.</p></div>
+      <div class="card"><div class="ic">&#128197;</div><h3>Booking and enquiries</h3><p>Let guests call, WhatsApp or email you for bookings, quotes and events from any page.</p></div>
+      <div class="card"><div class="ic">&#9881;&#65039;</div><h3>Web apps and dashboards</h3><p>Databases, backends and admin dashboards so you can manage products, orders and content yourself.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="work" style="background:var(--bg2)">
+  <div class="wrap">
+    <h2>Our work</h2>
+    <p class="sub">Tap any project to open the live website.</p>
+    <div class="work" id="workgrid"></div>
+  </div>
+</section>
+
+<section id="packages">
+  <div class="wrap">
+    <h2>Website packages</h2>
+    <p class="sub">Clear prices. Pick the package that fits your business.</p>
+    <div class="grid">
+      <div class="card pkg">
+        <h3>Starter Website</h3>
+        <div class="price">R2,500</div>
+        <ul>
+          <li>Professional, mobile-friendly design</li>
+          <li>Your photos, branding and information</li>
+          <li>Call, WhatsApp, email and social buttons</li>
+          <li>Location map where relevant</li>
+          <li>Online shop with cart and WhatsApp orders, if needed</li>
+        </ul>
+        <a class="pill ghost" href="#contact" onclick="pick('Starter Website')">Choose Starter</a>
+      </div>
+      <div class="card pkg best">
+        <div class="ribbon">POPULAR FOR GROWING BUSINESSES</div>
+        <h3>Pro Website</h3>
+        <div class="price">R5,500</div>
+        <ul>
+          <li>Everything in Starter</li>
+          <li>Database and backend</li>
+          <li>Products, bookings or orders stored online</li>
+          <li>Easier to grow and update</li>
+        </ul>
+        <a class="pill" href="#contact" onclick="pick('Pro Website')">Choose Pro</a>
+      </div>
+      <div class="card pkg">
+        <h3>Premium Website</h3>
+        <div class="price">R9,500</div>
+        <ul>
+          <li>Everything in Pro</li>
+          <li>Many pages (Home, About, Services, Gallery, Contact and more)</li>
+          <li>Admin dashboard to manage products, prices, photos and orders</li>
+          <li>Update your site yourself, without needing us</li>
+        </ul>
+        <a class="pill ghost" href="#contact" onclick="pick('Premium Website')">Choose Premium</a>
+      </div>
+    </div>
+    <p class="note">Need something different? <a href="https://wa.me/27834597295?text=Hi%20NovaWeb%20Atelier26%2C%20I%20need%20a%20custom%20website." target="_blank" rel="noopener" style="color:var(--cyan)">Message us on WhatsApp</a> for a custom quote. A written agreement is signed before any work starts.</p>
+  </div>
+</section>
+
+<section id="process" style="background:var(--bg2)">
+  <div class="wrap">
+    <h2>How it works</h2>
+    <p class="sub">Simple and clear from start to finish.</p>
+    <div class="steps">
+      <div class="step"><h3>Tell us about your business</h3><p>Message us your business name, services and photos.</p></div>
+      <div class="step"><h3>Choose a package</h3><p>Pick Starter, Pro or Premium and sign our simple agreement.</p></div>
+      <div class="step"><h3>We build and you review</h3><p>You see your website and request changes until you are happy.</p></div>
+      <div class="step"><h3>Go live</h3><p>We publish your website and you start receiving customers.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <h2>Get your website</h2>
+    <p class="sub">Tell us what you need and we will reply on WhatsApp.</p>
+    <div class="contact">
+      <div class="cbox">
+        <a class="row" href="https://wa.me/27834597295?text=Hi%20NovaWeb%20Atelier26%2C%20I%20would%20like%20a%20website%20for%20my%20business." target="_blank" rel="noopener"><div class="ic">&#128172;</div><div><b>WhatsApp</b><span>083 459 7295</span></div></a>
+        <a class="row" href="tel:+27834597295"><div class="ic">&#128222;</div><div><b>Call</b><span>083 459 7295</span></div></a>
+        <a class="row" href="mailto:novaweb.atelier26@gmail.com?subject=Website%20enquiry"><div class="ic">&#9993;&#65039;</div><div><b>Email</b><span>novaweb.atelier26@gmail.com</span></div></a>
+      </div>
+      <form onsubmit="sendForm();return false">
+        <input id="fn" placeholder="Your business name" required>
+        <select id="fp">
+          <option>Not sure yet</option>
+          <option>Starter Website (R2,500)</option>
+          <option>Pro Website (R5,500)</option>
+          <option>Premium Website (R9,500)</option>
+          <option>Custom / something else</option>
+        </select>
+        <textarea id="fm" placeholder="Tell us what you need"></textarea>
+        <button class="pill" type="submit">Send on WhatsApp</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <b style="color:var(--text)">NOVAWEB ATELIER26</b><br>Ideas &bull; Websites &bull; Apps<br>
+    083 459 7295 &middot; novaweb.atelier26@gmail.com<br>
+    &copy; NovaWeb Atelier26
+  </div>
+</footer>
+
+<a id="fab" href="https://wa.me/27834597295?text=Hi%20NovaWeb%20Atelier26%2C%20I%20would%20like%20a%20website." target="_blank" rel="noopener">&#128172; WhatsApp us</a>
+
+<script>
+var B='https://novawebatelier26-web.github.io/';
+var PR=[
+ {t:'The Cozy Box',k:'Online shop',d:'Gift hamper and perfume shop with a cart that sends orders to WhatsApp.',u:'cozybox-/'},
+ {t:'Nu Oasis Restaurant & Guest House',k:'Restaurant and guest house',d:'Dining, pool, day use pricing, location map and booking buttons.',u:'Demo-NU-OASIS/'},
+ {t:'Kameeldoring Oasis',k:'Leisure and events venue',d:'Activities, prices, food pre-orders, events and contact details.',u:'Kameeldoring-oasis/'},
+ {t:'The Haven Retreat',k:'Poolside lodge',d:'A poolside lodge experience website.',u:'haven-retreat-demo/'},
+ {t:'Azure Haven Lodge',k:'Lodge',d:'Lodge website project.',u:'Azure-Haven-Lodge/'},
+ {t:'NovaWeb Construction',k:'Construction',d:'Construction company website project.',u:'novaweb-construction-demo/'},
+ {t:'Cuddle Beyond the Limits',k:'Website project',d:'Website project.',u:'cuddle-beyond-the-limits/'},
+ {t:'MathsBud',k:'Education',d:'A website to learn maths.',u:'MathsHud/'}
+];
+var g=document.getElementById('workgrid'),h='';
+PR.forEach(function(p,i){
+  h+='<div class="proj"><div class="prev" data-i="'+i+'"><div class="ph">'+p.t+'</div><iframe data-src="'+B+p.u+'" title="'+p.t+' preview" loading="lazy" tabindex="-1"></iframe><a href="'+B+p.u+'" target="_blank" rel="noopener" aria-label="Open '+p.t+'"></a></div>'
+   +'<div class="meta"><div class="kind">'+p.k+'</div><h3>'+p.t+'</h3><p>'+p.d+'</p><a class="pill ghost" href="'+B+p.u+'" target="_blank" rel="noopener">View live website</a></div></div>';
+});
+g.innerHTML=h;
+function scaleAll(){[].forEach.call(document.querySelectorAll('.prev'),function(c){var f=c.querySelector('iframe');f.style.transform='scale('+(c.clientWidth/400)+')'})}
+scaleAll();window.addEventListener('resize',scaleAll);
+function load(f){if(!f.src){f.src=f.getAttribute('data-src');f.onload=function(){f.classList.add('on')}}}
+var fr=document.querySelectorAll('.prev iframe');
+if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){load(e.target);io.unobserve(e.target)}})},{rootMargin:'200px'});
+  [].forEach.call(fr,function(f){io.observe(f)});
+}else{[].forEach.call(fr,load)}
+function pick(n){var s=document.getElementById('fp');for(var i=0;i<s.options.length;i++){if(s.options[i].text.indexOf(n)===0){s.selectedIndex=i}}}
+function sendForm(){
+  var m='Hi NovaWeb Atelier26,\nBusiness: '+document.getElementById('fn').value+'\nPackage: '+document.getElementById('fp').value+'\n'+document.getElementById('fm').value;
+  window.open('https://wa.me/27834597295?text='+encodeURIComponent(m),'_blank');
+}
+</script>
+</body>
+</html>
