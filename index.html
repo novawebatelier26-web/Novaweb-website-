@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#050914">
+<meta name="description" content="NOVAWEB ATELIER26 builds modern, professional websites for businesses.">
+<title>NOVAWEB ATELIER26 | We Build Digital First Impressions</title>
+<style>
+:root{--bg:#050914;--panel:#0d1729;--panel2:#101e34;--text:#f4f7ff;--muted:#aab6ca;--blue:#168cff;--cyan:#19d5ef;--line:rgba(125,169,230,.18)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:85px}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit}
+.container{width:min(1120px,calc(100% - 38px));margin:auto}
+.topline{height:3px;background:linear-gradient(90deg,#087bff,#19d5ef,#087bff)}
+header{position:sticky;top:0;z-index:50;background:rgba(5,9,20,.94);backdrop-filter:blur(15px);border-bottom:1px solid var(--line)}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:1px}
+.brand img{width:48px;height:48px;object-fit:cover;border-radius:50%;border:1px solid #168cff}
+.brand small{display:block;color:#75caff;font-size:10px;letter-spacing:4px}
+.navlinks{display:flex;align-items:center;gap:22px;font-size:13px;color:#cbd7e9}
+.navlinks a:hover{color:var(--cyan)}
+.menu{display:none;background:none;color:white;border:1px solid var(--line);padding:8px 12px;border-radius:8px}
+.btn{display:inline-block;padding:13px 20px;border-radius:8px;background:linear-gradient(100deg,#087bff,#12bce7);color:white;font-size:13px;font-weight:bold;border:1px solid transparent;cursor:pointer}
+.btn.outline{background:transparent;border-color:#278ce5}
+.hero{padding:100px 0 90px;overflow:hidden;background:radial-gradient(ellipse at 80% 20%,rgba(0,112,255,.23),transparent 42%),radial-gradient(ellipse at 10% 80%,rgba(0,210,235,.1),transparent 40%)}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:35px;align-items:center}
+.eyebrow{color:#53c8ff;text-transform:uppercase;letter-spacing:3px;font-size:11px;font-weight:bold}
+h1{font-size:clamp(40px,6vw,68px);line-height:1.08;letter-spacing:-2px;margin:16px 0}
+h1 span{background:linear-gradient(90deg,#48baff,#19d5ef);background-clip:text;color:transparent}
+.hero p{max-width:620px;color:var(--muted);font-size:17px;margin-bottom:26px}
+.actions{display:flex;gap:12px;flex-wrap:wrap}
+.orbit{width:min(320px,75vw);aspect-ratio:1;margin:auto;border-radius:50%;border:1px solid #168cff;display:grid;place-items:center;box-shadow:0 0 40px rgba(0,130,255,.22),inset 0 0 30px rgba(0,130,255,.12)}
+.orbit img{width:83%;border-radius:50%;mix-blend-mode:screen}
+section{padding:78px 0}
+.section-head{text-align:center;max-width:700px;margin:0 auto 38px}
+.section-head h2{font-size:clamp(29px,4vw,42px);line-height:1.2;margin:9px 0}
+.section-head p,.muted{color:var(--muted)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
+.about-box{padding:28px;border:1px solid var(--line);border-radius:14px;background:linear-gradient(145deg,#101d32,#080e1a)}
+.about-box h3{font-size:23px;margin-bottom:10px}
+.checks{display:grid;gap:10px;margin-top:20px}
+.checks span{color:var(--cyan);margin-right:8px}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}
+.stat{background:#0b1424;border:1px solid var(--line);padding:17px;text-align:center;border-radius:10px}
+.stat b{display:block;color:#65caff}
+.stat small{color:var(--muted)}
+.dark-section{background:#080f1d;border-block:1px solid var(--line)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.card,.project,.package{background:linear-gradient(145deg,#101d32,#0a1221);border:1px solid var(--line);border-radius:13px;overflow:hidden}
+.card{padding:24px}
+.card-icon{font-size:25px;color:#5fcaff;margin-bottom:12px}
+.card h3{font-size:19px;margin-bottom:7px}
+.card p{font-size:14px;color:var(--muted)}
+.portfolio{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.project-banner{height:145px;display:grid;place-items:center;text-align:center;padding:18px;background:radial-gradient(circle,rgba(0,133,255,.25),transparent 65%),#0a1323}
+.project-banner strong{font-size:24px}
+.project-banner small{display:block;color:#7bcaff;text-transform:uppercase;letter-spacing:2px;font-size:10px}
+.project-body{padding:20px}
+.project-body h3{font-size:19px;margin-bottom:5px}
+.project-body p{color:var(--muted);font-size:14px}
+.project-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:16px}
+.tag{font-size:11px;color:#8fd4ff;border:1px solid rgba(75,167,255,.3);border-radius:20px;padding:4px 9px}
+.project-link{color:#58c7ff;font-weight:bold;font-size:13px}
+.package-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.package{padding:25px}
+.package.featured{border-color:#168cff;box-shadow:0 0 28px rgba(22,140,255,.16)}
+.package h3{font-size:22px}
+.package p{color:var(--muted);font-size:13px;margin:6px 0 17px}
+.package ul{list-style:none;display:grid;gap:10px;margin:18px 0 23px;font-size:14px;color:#dce7f6}
+.package li:before{content:"✓";color:var(--cyan);margin-right:9px}
+.package .btn{width:100%;text-align:center}
+.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:20px}
+.contact-box,.contact-form{padding:25px;border:1px solid var(--line);border-radius:13px;background:var(--panel)}
+.contact-box h3,.contact-form h3{font-size:22px;margin-bottom:8px}
+.contact-box>p,.contact-form>p{color:var(--muted);font-size:14px;margin-bottom:18px}
+.contact-item{display:flex;gap:12px;margin:17px 0}
+.contact-item b{display:block;font-size:13px}
+.contact-item span,.contact-item a{color:var(--muted);font-size:14px;overflow-wrap:anywhere}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.field.full{grid-column:1/-1}
+label{display:block;font-size:12px;color:#cbd7e9;margin-bottom:5px}
+input,select,textarea{width:100%;padding:12px;border:1px solid rgba(130,170,220,.25);border-radius:7px;background:#070d19;color:white}
+textarea{min-height:105px;resize:vertical}
+.contact-form button{width:100%;margin-top:15px}
+footer{padding:28px 0;background:#030711;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+.footer-row{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.footer-row b{color:white;letter-spacing:1px}
+.float{position:fixed;right:15px;bottom:15px;z-index:40;background:#0fa968;color:white;padding:12px 17px;border-radius:30px;font-weight:bold;font-size:13px;box-shadow:0 7px 24px #0008}
+@media(max-width:820px){.hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}.orbit{width:235px}.cards,.package-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){
+ .container{width:calc(100% - 30px)}.nav{height:68px}.brand img{width:42px;height:42px}.brand{font-size:13px}
+ .menu{display:block}.navlinks{display:none;position:absolute;top:68px;left:0;right:0;padding:18px 22px;background:#080f1d;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch}
+ .navlinks.open{display:flex}.navlinks a{padding:7px 0}.hero{padding:70px 0}.hero p{font-size:15px}
+ section{padding:62px 0}.cards,.portfolio,.package-grid{grid-template-columns:1fr}
+ .form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.project-body p{min-height:0}
+}
+</style>
+</head>
+<body>
+<div class="topline"></div>
+<header>
+ <div class="container nav">
+  <a class="brand" href="#home"><img src="logo.png" alt="NOVAWEB ATELIER26 logo"><span>NOVAWEB<small>ATELIER26</small></span></a>
+  <button class="menu" onclick="toggleMenu()" aria-label="Open menu">☰</button>
+  <nav class="navlinks" id="navlinks">
+   <a href="#home" onclick="closeMenu()">Home</a><a href="#about" onclick="closeMenu()">About</a><a href="#services" onclick="closeMenu()">Services</a><a href="#projects" onclick="closeMenu()">Projects</a><a href="#packages" onclick="closeMenu()">Packages</a><a class="btn" href="#contact" onclick="closeMenu()">Get a quote</a>
+  </nav>
+ </div>
+</header>
+
+<main>
+<section class="hero" id="home"><div class="container hero-grid">
+ <div><div class="eyebrow">Ideas · Websites · Apps</div><h1>We Build <span>Digital First Impressions.</span></h1>
+ <p>We create modern, professional websites that help businesses present themselves with confidence, reach customers and grow online.</p>
+ <div class="actions"><a class="btn" href="#projects">Explore our projects ↗</a><a class="btn outline" href="#contact">Start your website</a></div></div>
+ <div class="orbit"><img src="logo.png" alt="NOVAWEB ATELIER26"></div>
+</div></section>
+
+<section id="about"><div class="container about-grid">
+ <div><div class="eyebrow">Who we are</div><h2 style="font-size:clamp(30px,4vw,43px);line-height:1.15;margin:12px 0">Your ideas deserve a strong online presence.</h2>
+ <p class="muted">NOVAWEB ATELIER26 is a web design business focused on building clean, responsive and user-friendly websites for businesses and brands. From a first online presence to a complete redesign, we turn ideas into practical digital experiences.</p>
+ <div class="checks"><div><span>✦</span>Modern, professional design</div><div><span>✦</span>Mobile-friendly layouts</div><div><span>✦</span>Clear communication throughout the project</div></div></div>
+ <div class="about-box"><h3>Built around your business.</h3><p class="muted">Every business is different. We work to understand what you offer and create a website that presents your services, products and brand clearly.</p>
+ <div class="stats"><div class="stat"><b>Responsive</b><small>Mobile and desktop</small></div><div class="stat"><b>Custom</b><small>Designed for your brand</small></div><div class="stat"><b>Practical</b><small>Easy to navigate</small></div><div class="stat"><b>Modern</b><small>Clean visual style</small></div></div></div>
+</div></section>
+
+<section class="dark-section" id="services"><div class="container">
+ <div class="section-head"><div class="eyebrow">What we do</div><h2>Our Services</h2><p>Digital solutions designed to help your business make a strong first impression.</p></div>
+ <div class="cards">
+  <article class="card"><div class="card-icon">⌘</div><h3>Website Design</h3><p>Professional websites built around your business, brand and goals.</p></article>
+  <article class="card"><div class="card-icon">↗</div><h3>Website Redesign</h3><p>Give an existing website a fresh, modern look and a clearer user experience.</p></article>
+  <article class="card"><div class="card-icon">▣</div><h3>Mobile Optimisation</h3><p>Make your website easier to view and use on phones, tablets and desktops.</p></article>
+ </div>
+</div></section>
+
+<section id="projects"><div class="container">
+ <div class="section-head"><div class="eyebrow">Selected work</div><h2>Explore Our Projects</h2><p>Browse our live demonstrations and digital projects. Select a project to open its website.</p></div>
+ <div class="portfolio">
+  <article class="project"><div class="project-banner"><div><strong>The Quiet Nest</strong><small>Guest house website demo</small></div></div><div class="project-body"><h3>Guest House Website</h3><p>A hospitality website concept featuring accommodation, facilities, a gallery and a sample booking experience.</p><div class="project-foot"><span class="tag">Hospitality</span><a class="project-link" href="https://novawebatelier26-web.github.io/The-quiet-nest-demo-/" target="_blank" rel="noopener">View live demo ↗</a></div></div></article>
+  <article class="project"><div class="project-banner"><div><strong>NovaWeb Construction</strong><small>Construction website demo</small></div></div><div class="project-body"><h3>Construction Website</h3><p>A business website concept designed to present construction services and build trust with potential customers.</p><div class="project-foot"><span class="tag">Construction</span><a class="project-link" href="https://novawebatelier26-web.github.io/novaweb-construction-demo/" target="_blank" rel="noopener">View live demo ↗</a></div></div></article>
+  <article class="project"><div class="project-banner"><div><strong>Cuddle Beyond the Limits</strong><small>Clothing brand website</small></div></div><div class="project-body"><h3>Clothing Brand Website</h3><p>A fashion-focused website concept created to showcase a clothing brand and its products.</p><div class="project-foot"><span class="tag">Fashion</span><a class="project-link" href="https://novawebatelier26-web.github.io/cuddle-beyond-the-limits/" target="_blank" rel="noopener">View live demo ↗</a></div></div></article>
+  <article class="project"><div class="project-banner"><div><strong>MathsBub</strong><small>Online learning platform</small></div></div><div class="project-body"><h3>MathsBub Learning</h3><p>An educational platform for mathematics learning and practice.</p><div class="project-foot"><span class="tag">Education</span><a class="project-link" href="https://novawebatelier26-web.github.io/MathsHud/" target="_blank" rel="noopener">Visit website ↗</a></div></div></article>
+ </div>
+</div></section>
+
+<section class="dark-section" id="packages"><div class="container">
+ <div class="section-head"><div class="eyebrow">Work with us</div><h2>Website Packages</h2><p>Choose a starting point that suits the size and needs of your business. Final scope is confirmed before work begins.</p></div>
+ <div class="package-grid">
+  <article class="package"><h3>Starter</h3><p>A simple online presence for your business.</p><ul><li>One-page website</li><li>Responsive mobile layout</li><li>Business information and contact section</li><li>Essential website sections</li></ul><a class="btn outline" href="#contact" onclick="choosePackage('Starter')">Enquire about Starter</a></article>
+  <article class="package featured"><h3>Pro</h3><p>More room to present your business.</p><ul><li>Three-page website</li><li>Responsive mobile layout</li><li>Database integration where required</li><li>More detailed business content</li></ul><a class="btn" href="#contact" onclick="choosePackage('Pro')">Enquire about Pro</a></article>
+  <article class="package"><h3>Premium</h3><p>A larger website with private administration.</p><ul><li>Five-page website</li><li>Responsive mobile layout</li><li>Database integration</li><li>Private admin dashboard</li></ul><a class="btn outline" href="#contact" onclick="choosePackage('Premium')">Enquire about Premium</a></article>
+ </div>
+</div></section>
+
+<section id="contact"><div class="container">
+ <div class="section-head"><div class="eyebrow">Let's work together</div><h2>Let's Build Your Website</h2><p>Tell us about your business and the website you need.</p></div>
+ <div class="contact-grid">
+  <div class="contact-box"><h3>Contact NOVAWEB</h3><p>Reach out to discuss a new website, a redesign or a project idea.</p>
+   <div class="contact-item"><div>💬</div><div><b>WhatsApp</b><a href="https://wa.me/27834597295" target="_blank" rel="noopener">+27 83 459 7295</a></div></div>
+   <div class="contact-item"><div>✉️</div><div><b>Email</b><a href="mailto:novaweb.atelier26@gmail.com">novaweb.atelier26@gmail.com</a></div></div>
+   <div class="contact-item"><div>🌐</div><div><b>Portfolio</b><span>Explore our live projects above.</span></div></div>
+   <a class="btn" style="display:block;text-align:center;margin-top:18px" href="https://wa.me/27834597295?text=Hello%20NOVAWEB%20ATELIER26%2C%20I%20would%20like%20to%20discuss%20a%20website%20project." target="_blank" rel="noopener">Chat on WhatsApp</a>
+  </div>
+  <form class="contact-form" onsubmit="sendEnquiry(event)"><h3>Request a quote</h3><p>Complete the form to open a prepared WhatsApp enquiry.</p>
+   <div class="form-grid">
+    <div class="field"><label for="name">Your name</label><input id="name" required placeholder="Your name"></div>
+    <div class="field"><label for="business">Business name</label><input id="business" placeholder="Your business"></div>
+    <div class="field"><label for="email">Email address</label><input id="email" type="email" placeholder="you@example.com"></div>
+    <div class="field"><label for="package">Package</label><select id="package"><option>Not sure yet</option><option>Starter</option><option>Pro</option><option>Premium</option><option>Website redesign</option></select></div>
+    <div class="field full"><label for="details">Tell us about your project</label><textarea id="details" required placeholder="What kind of website do you need?"></textarea></div>
+   </div><button class="btn" type="submit">Send enquiry on WhatsApp ↗</button>
+  </form>
+ </div>
+</div></section>
+</main>
+
+<footer><div class="container footer-row"><div><b>NOVAWEB ATELIER26</b><br>We Build Digital First Impressions.</div><div>© 2026 NOVAWEB ATELIER26. All rights reserved.</div></div></footer>
+<a class="float" href="https://wa.me/27834597295?text=Hello%20NOVAWEB%20ATELIER26%2C%20I%20am%20interested%20in%20a%20website." target="_blank" rel="noopener">WhatsApp us</a>
+
+<script>
+function toggleMenu(){document.getElementById('navlinks').classList.toggle('open')}
+function closeMenu(){document.getElementById('navlinks').classList.remove('open')}
+function choosePackage(name){document.getElementById('package').value=name}
+function sendEnquiry(event){
+ event.preventDefault();
+ const name=document.getElementById('name').value.trim();
+ const business=document.getElementById('business').value.trim();
+ const email=document.getElementById('email').value.trim();
+ const pack=document.getElementById('package').value;
+ const details=document.getElementById('details').value.trim();
+ const message="Hello NOVAWEB ATELIER26, I would like to request a website quote.\\n\\n"+
+ "Name: "+name+"\\nBusiness: "+(business||"Not provided")+"\\nEmail: "+(email||"Not provided")+
+ "\\nPackage: "+pack+"\\nProject details: "+details;
+ window.open("https://wa.me/27834597295?text="+encodeURIComponent(message),"_blank");
+}
+</script>
+</body>
+</html>
